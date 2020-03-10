@@ -25,3 +25,39 @@ function myCommand() {
 }
 ```
 Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+
+```typescript
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class UsersService {
+  private readonly users: any[];
+
+  constructor() {
+    this.users = [
+      {
+        userId: 1,
+        username: 'mary',
+        password: 'm',
+        role: 'manager',
+      },
+      {
+        userId: 2,
+        username: 'chris',
+        password: 'c',
+        role: 'user',
+      },
+      {
+        userId: 3,
+        username: 'bob',
+        password: 'b',
+        role: 'user',
+      },
+    ];
+  }
+
+  async findOne(username: string): Promise<any> {
+    return this.users.find(user => user.username === username);
+  }
+}
+```
